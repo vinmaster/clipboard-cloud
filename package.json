@@ -1,0 +1,25 @@
+{
+  "name": "clipboard-cloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon -e 'js' -i 'public' server.js",
+    "postinstall": "cp node_modules/qrcode/build/qrcode.min.js public/js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "qrcode": "^1.2.2",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.4"
+  }
+}

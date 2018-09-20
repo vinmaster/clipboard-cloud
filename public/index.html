@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Clipboard Cloud</title>
+  <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no" />
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <main id="app">
+    <div class="hud">
+      <div v-bind:style="hudStyle">Status: <span id="status">{{ status }}</span></div>
+      <canvas id="canvas"></canvas>
+    </div>
+    <textarea v-on:input="updateText($event.target.value)">{{ text }}</textarea>
+  </main>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/vue.js"></script>
+<script src="/js/vue-socket.io-extended.min.js"></script>
+<script src="/js/qrcode.min.js"></script>
+<script src="/js/client.js"></script>
+
+</html>
