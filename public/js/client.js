@@ -2,6 +2,9 @@
 
 const vueApp = {
   el: '#app',
+  mounted() {
+    new ClipboardJS('#copy-btn');
+  },
   sockets: {
     connect() {
       console.log('socket connected', this.$socket.id);
@@ -17,14 +20,14 @@ const vueApp = {
     GET_IP(ip) {
       QRCode.toCanvas(document.getElementById('canvas'), ip, {
         // version: 2,
-      }, (err) => {
+      }, err => {
         if (err) console.error(err);
         else console.log('GET_IP', ip);
-      })
+      });
     },
     SET_TEXT({ id, text }) {
       if (this.socketId !== id) {
-        this.updateText(decodeURI(text), false)
+        this.updateText(decodeURI(text), false);
       }
     },
   },
@@ -42,11 +45,10 @@ const vueApp = {
         return {
           color: 'green',
         };
-      } else {
-        return {
-          color: 'red',
-        };
       }
+      return {
+        color: 'red',
+      };
     },
   },
   data: {

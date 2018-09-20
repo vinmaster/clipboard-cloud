@@ -15,12 +15,14 @@
       <canvas id="canvas"></canvas>
     </div>
     <textarea v-on:input="updateText($event.target.value)">{{ text }}</textarea>
+    <button id="copy-btn" v-bind:data-clipboard-text="text">Copy</button>
   </main>
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/vue.js"></script>
 <script src="/js/vue-socket.io-extended.min.js"></script>
 <script src="/js/qrcode.min.js"></script>
+<script src="/js/clipboard.min.js"></script>
 <script src="/js/client.js"></script>
 
 </html>
